@@ -14,12 +14,9 @@ export default function Home() {
       return;
     }
 
-    // 정수로 변환 후 이진수 문자열로 변경 (최소 4자리로 패딩)
+    // 정수로 변환 후 이진수 문자열로 변경
     const num = Math.floor(Number(value));
-    let bin = num.toString(2);
-    while (bin.length < 4) {
-      bin = "0" + bin;
-    }
+    const bin = num.toString(2);
     setBinaryStr(bin);
   };
 
@@ -30,9 +27,12 @@ export default function Home() {
           type="number"
           value={inputValue}
           onChange={handleInputChange}
-          placeholder="0000"
+          placeholder="ENTER NUMBER"
           className={styles.inputBox}
         />
+      </div>
+      <div className={styles.valContainer}>
+        <p className={styles.val}>{binaryStr}</p>
       </div>
 
       <div className={styles.circleContainer}>

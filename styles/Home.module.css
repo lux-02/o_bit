@@ -38,31 +38,54 @@
 .inputBox {
   -moz-appearance: textfield;
 }
+.valContainer {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.val {
+  width: 70%;
+  color: #fff;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.val::-webkit-scrollbar {
+  display: none;
+}
 
 .circleContainer {
-  width: 70%;
-  height: 80%;
+  width: 90%;
+  height: 70%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 6vw;
+  gap: 20px;
+  padding: 20px;
 }
+
 .circle {
-  width: 0.2vw;
-  height: 0.2vw;
-  border: 0.2vw solid #fff;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
   border-radius: 50%;
   box-sizing: border-box;
 }
+
 .filled {
   background-color: #fff;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 768px) {
+  .circleContainer {
+    gap: 15px;
+  }
+
   .circle {
-    width: 5vw;
-    height: 5vw;
-    margin: 1vw;
+    width: 30px;
+    height: 30px;
   }
 }
